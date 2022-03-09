@@ -9,7 +9,7 @@ data = pd.read_csv('./vertebrate.csv')
 
 # 2) (15 points) The number of records is limited. Convert the data into a binary classification: mammals versus non-mammals
 # Hint: ['fishes','birds','amphibians','reptiles'] are considered 'non-mammals'
-data['Class'] = data['Class'].apply(lambda x: 'mammals' if x== 'mammals' else 'non-mammals')
+data['Class'] = data['Class'].apply(lambda x: 'mammals' if x == 'mammals' else 'non-mammals')
 
 # 3) (15 points) We want to classify animals based on the attributes: Warm-blooded,Gives Birth,Aquatic Creature,Aerial Creature,Has Legs,Hibernates
 # For training, keep only the attributes of interest, and seperate the target class from the class attributes
