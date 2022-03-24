@@ -1,6 +1,7 @@
 from statistics import mean
 import pandas as pd
 import numpy as np
+from sklearn.preprocessing import StandardScaler
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.model_selection import train_test_split
 from sklearn.model_selection import cross_val_score
@@ -42,6 +43,10 @@ data.drop_duplicates(inplace=True)
 # separating features from target class
 classData = data["class"]
 attributeData = data.iloc[:,0:-1]
+
+# standardizing data
+scaler = StandardScaler()
+attributeData = scaler.fit_transform(attributeData)
 
 # mapping class label values
 classData = classData.map(lambda x: 0 if x == 2 else 1)
